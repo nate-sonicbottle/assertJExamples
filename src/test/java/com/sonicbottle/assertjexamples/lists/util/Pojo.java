@@ -1,6 +1,7 @@
 package com.sonicbottle.assertjexamples.lists.util;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Pojo implements Serializable {
 
@@ -31,5 +32,23 @@ public class Pojo implements Serializable {
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Pojo pojo = (Pojo)o;
+        return age == pojo.age &&
+                Objects.equals(firstName, pojo.firstName) &&
+                Objects.equals(lastName, pojo.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(firstName, lastName, age);
     }
 }
