@@ -48,5 +48,14 @@ public class ListExamples {
         assertThat(pojos).containsExactlyInAnyOrder(pojo3, pojo1, pojo2);
     }
 
+    @Test
+    public void listContainsAllElementsInExactOrder() {
+        assertThat(pojos).containsExactlyInAnyOrder(pojo1, pojo2, pojo3);
+    }
+
+    @Test
+    public void listContainsOnly() {
+        assertThat(pojos).containsOnly(pojo2, pojo1, pojo3);
+    }
 
 }
