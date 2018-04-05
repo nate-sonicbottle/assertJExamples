@@ -33,6 +33,7 @@ public class ListExamples {
 
     @Test
     public void listContainsExpectedElementByEquals() {
+
         assertThat(pojos).contains(pojo1);
     }
 
@@ -42,6 +43,16 @@ public class ListExamples {
 
         assertThat(pojos).doesNotContain(pojo);
     }
+
+    @Test
+    public void chainingExample() {
+        Pojo pojo = new Pojo("John", "Holmes", 28);
+
+        assertThat(pojos)
+                .doesNotContain(pojo)
+                .contains(pojo1);
+    }
+
 
     @Test
     public void listContainsAllElementsInAnyOrder() {
@@ -58,4 +69,16 @@ public class ListExamples {
         assertThat(pojos).containsOnly(pojo2, pojo1, pojo3);
     }
 
+    @Test
+    public void listContainsOnlyOnce() {
+        assertThat(pojos).containsOnlyOnce(pojo2);
+    }
+
+    @Test
+    public void listExtracting() {
+        assertThat(pojos).extracting(Pojo::getFirstName)
+                .contains("Bob")
+                .doesNotContain("John");
+
+    }
 }
