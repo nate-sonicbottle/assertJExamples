@@ -2,7 +2,6 @@ package com.sonicbottle.assertjexamples.lists;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -79,6 +78,22 @@ public class ListExamples {
         assertThat(pojos).extracting(Pojo::getFirstName)
                 .contains("Bob")
                 .doesNotContain("John");
+    }
 
+    @Test
+    public void listSize() {
+        assertThat(pojos).hasSize(3);
+    }
+
+    @Test
+    public void listStartsWith() {
+        assertThat(pojos).startsWith(pojo1);
+    }
+
+    @Test
+    public void listSubset() {
+        List<Pojo> pojos2 = Arrays.asList(pojo1);
+
+        assertThat(pojos2).isSubsetOf(pojos);
     }
 }
