@@ -25,7 +25,7 @@ public class ServiceExamples {
     }
 
     @Test
-    public void test() {
+    public void exceptionAssertThatExceptionWithCauseBy() {
         assertThatThrownBy(() -> service.doSomethingAndThrowExceptionWithCauseBy())
                 .hasCauseInstanceOf(NullPointerException.class);
     }
