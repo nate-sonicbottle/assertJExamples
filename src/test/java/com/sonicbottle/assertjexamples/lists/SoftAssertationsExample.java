@@ -33,4 +33,7 @@ public class SoftAssertationsExample {
             softly.assertThat(1 == 3).as("This should fail").isTrue();
         }
     }
+
+    //TODO Demostrate with TestNG
+    // TODO Demostrate with junit
 }
