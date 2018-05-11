@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.assertj.core.api.AutoCloseableSoftAssertions;
 import org.assertj.core.api.SoftAssertions;
+import org.junit.After;
 import org.junit.Test;
 
 public class SoftAssertationsExample {
@@ -12,7 +13,7 @@ public class SoftAssertationsExample {
     @Test
     public void nonSoftAssertionExample() {
         assertTrue("This should fail", 1 == 2);
-        assertTrue("This should work",1 ==1);
+        assertTrue("This should work", 1 == 1);
         assertTrue("This should fail", 1 == 3);
     }
 
